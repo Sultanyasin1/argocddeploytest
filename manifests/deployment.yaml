@@ -19,10 +19,10 @@ spec:
       labels:
         app: test
     spec:
-#	The list of containers inside the Pod
+#	The list of containers inside the Pod.
       containers:
         - name: test-container
-#	Which Docker image to use for this container
+#	Which Docker image to use for this container.
           image: sultanss/test:v1
           ports:
             - containerPort: 3000
