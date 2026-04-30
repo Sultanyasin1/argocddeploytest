@@ -23,6 +23,6 @@ spec:
       containers:
         - name: test-container
 #	Which Docker image to use for this container.
-          image: sultanss/test:v1
+          image: sultanss/nextjs:v1
           ports:
             - containerPort: 3000
