@@ -3,60 +3,60 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-#Deployments name
+  #Deployments name
   name: fe-deployment
   # separate different projects inside the same cluster_
   namespace: pds
 #“How many Pods and how to manage them”
 spec:
-#replicas: 2 → create 2 Pods
+  #replicas: 2 → create 2 Pods
   replicas: 2
   selector:
     matchLabels:
-#selector: matchLabels: app: test . These Pods belong to this Deployment"
+      #selector: matchLabels: app: test . These Pods belong to this Deployment"
       app: test
-#	The blueprint for each Pod; This is literally how each Pod will look like
+      #	The blueprint for each Pod; This is literally how each Pod will look like
   template:
     metadata:
-#	A sticker on each Pod so the selector can find it
+      #	A sticker on each Pod so the selector can find it
       labels:
         app: test
-# spec.template.spec : “What’s inside the Pod”        
+        # spec.template.spec : “What’s inside the Pod”        
     spec:
-#	The list of containers inside the Pod
-      imagePullSecrets:          
+      #	The list of containers inside the Pod
+      imagePullSecrets:
         - name: ghcr-secret
       containers:
         - name: test-container
-#	Which Docker image to use for this container
-          
+          #	Which Docker image to use for this container
+
           #image: sultanss/nextjs:v1
           #image: ghcr.io/sultanyasin1/my-nextjs-app:5406a29
-          image: ghcr.io/sultansyasin1/my-nextjs-app:latest #return to this after testing
+          image: ghcr.io/sultanyasin1/my-nextjs-app@sha256:e211a70c29ccc777543df16725daa89308e82bc1eadf9686a0c8e37001052968 #return to this after testing
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
-          #env:
-          #  - name: username
-          #    valueFrom:
-          #      secretKeyRef:
-          #        name: my-nextjs-secret
-          #        key: username
-          #  - name: DATABASE_PASSWORD
-          #    valueFrom:
-          #      secretKeyRef:
-          #        name: my-nextjs-secret
-          #        key: DATABASE_PASSWORD
-          #  - name: API_PRIVATE_KEY
-          #    valueFrom:
-          #      secretKeyRef:
-          #        name: my-nextjs-secret
-          #        key: API_PRIVATE_KEY
-          #  - name: API_PUBLIC_KEY
-          #    valueFrom:
-          #      secretKeyRef:
-          #        name: my-nextjs-secret
-          #        key: API_PUBLIC_KEY
+              #env:
+              #  - name: username
+              #    valueFrom:
+              #      secretKeyRef:
+              #        name: my-nextjs-secret
+              #        key: username
+              #  - name: DATABASE_PASSWORD
+              #    valueFrom:
+              #      secretKeyRef:
+              #        name: my-nextjs-secret
+              #        key: DATABASE_PASSWORD
+              #  - name: API_PRIVATE_KEY
+              #    valueFrom:
+              #      secretKeyRef:
+              #        name: my-nextjs-secret
+              #        key: API_PRIVATE_KEY
+              #  - name: API_PUBLIC_KEY
+              #    valueFrom:
+              #      secretKeyRef:
+              #        name: my-nextjs-secret
+              #        key: API_PUBLIC_KEY
 #Deployment
 #   ↓ creates
 #Pods (with labels)
