@@ -10,7 +10,7 @@ metadata:
 #“How many Pods and how to manage them”
 spec:
   #replicas: 2 → create 2 Pods
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       #selector: matchLabels: app: test . These Pods belong to this Deployment"
@@ -32,7 +32,7 @@ spec:
 
           #image: sultanss/nextjs:v1
           #image: ghcr.io/sultanyasin1/my-nextjs-app:5406a29
-          image: ghcr.io/sultanyasin1/my-nextjs-app@sha256:e211a70c29ccc777543df16725daa89308e82bc1eadf9686a0c8e37001052968 #return to this after testing
+          image: ghcr.io/sultanyasin1/my-nextjs-app@sha256:e6fbafdb31066feaf60e5677e5084abd6366d31654a5d8b2a56e38415f61792a #return to this after testing
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
