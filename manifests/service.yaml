@@ -17,4 +17,3 @@ spec:
   #ports: - port: 80	"Listen for traffic on port 80"
   #targetPort: 3000	"Forward that traffic to port 3000 inside the Pod"
   #type: LoadBalancer	"Create an external entry point so I can access it from my browser"
-   
