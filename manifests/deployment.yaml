@@ -32,7 +32,7 @@ spec:
 
           #image: sultanss/nextjs:v1
           #image: ghcr.io/sultanyasin1/my-nextjs-app:5406a29
-          image: ghcr.io/sultanyasin1/my-nextjs-app@sha256:06a5103ab47a92156d3e43f27579245577a40ac87c07b50f769b3d14ba9cd75c
+          image: ghcr.io/sultanyasin1/my-nextjs-app@sha256:166766e30606cd8911ec870e8933e4499022131cc842b12bc139fbcc47fa0b6e
           #imagePullPolicy: Always
           ports:
             - containerPort: 3000
